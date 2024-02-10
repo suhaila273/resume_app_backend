@@ -11,4 +11,11 @@ router.post("/addresume",async(req,res)=>{
     res.json({status:"success"})
 })
 
+router.get("/viewresume",async(req,res)=>{
+    let result=await resumeModel.find()
+    .populate("userId","username dob email phone -_id")
+    .exec() 
+    res.json(result)
+})
+
 module.exports=router
