@@ -5,6 +5,7 @@ const mongoose=require("mongoose")
 const app=express()
 
 const userRoute=require("./controllers/userRouter")
+const resumeRoute=require("./controllers/resumeRouter")
 
 app.use(express.json())
 app.use(cors())
@@ -15,6 +16,7 @@ mongoose.connect("mongodb+srv://suhaila:suhaila273@cluster0.azy349s.mongodb.net/
 )
 
 app.use("/api/register",userRoute)
+app.use("/api/resume",resumeRoute)
 
 app.listen(3001,()=>{
     console.log("server running")
