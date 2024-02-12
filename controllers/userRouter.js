@@ -40,7 +40,7 @@ router.post("/login",async(req,res)=>{
     {
         return res.json({status:"invalid password"})
     }
-    res.json({status:"success"})
+    res.json({status:"success","userdata":data})
 
 })
 
